@@ -1,92 +1,92 @@
-# DreamHouse Mobile App
+# DreamHouse モバイルアプリケーション
 
-This repository hosts the source code and installation instructions for the DreamHouse mobile app. DreamHouse is an end-to-end sample application that demonstrates how to build apps on the Salesforce platform. Visit the [DreamHouse Microsite](http://dreamhouse-site.herokuapp.com/) for more information.
+このリポジトリはDreamhouseモバイルアプリケーケーションの手順書とソースコードをホストしています。DreamHouseはSalesforceを使ったend-to-endのデモンストレーション用のサンプルアプリケーションです。 詳しくは[DreamHouseのサイト](http://dreamhouseappjp.io/) をご覧ください。
 
 
-## Install the Salesforce Back-end
+## Salesforceバックエンドのインストール
 
-Follow [these instructions](http://dreamhouse-site.herokuapp.com/installation/) to install the Salesforce back-end.
+[こちらの手順](http://dreamhouseappjp.io/installation/) に従ってSalesforceバックエンドをインストールして下さい。
 
-## Install the Application
+## アプリケーションのインストール
 
-1. Install the latest version of Cordova and Ionic 2 beta:
+1. 最新バージョンのCordova 及び Ionic 2 ベータをインストールします:
     ```
     npm install -g cordova ionic@beta
     ```
 
-    or (Mac):
+    (Macの場合):
     ```
     sudo npm install -g cordova ionic@beta
     ```
 
-1. Clone this repository:
+1. このリポジトリをCloneします:
     ```
-    git clone https://github.com/dreamhouseapp/dreamhouse-mobile-app
-    ```
-    
-1. Navigate to the `dreamhouse-mobile-app` directory:
-    ```
-    cd dreamhouse-mobile-app
+    git clone https://github.com/dreamhouseapp-jp/dreamhouse-mobile-ionic
     ```
 
-1. Install the dependencies:
+1. `dreamhousejp-mobile-ionic` ディレクトリへ移動します:
+    ```
+    cd dreamhousejp-mobile-ionic
+    ```
+
+1. 依存ライブラリをインストールします:
     ```
     npm install
     ```
-    
-## Build and Run in your Browser    
 
-1. Install gulp if you don't already have it on your system:
+## ビルド及びブラウザでの動作
+
+1. もしgulpがシステムにインストールされていない場合はインストールします:
     ```
     npm install -g gulp
     ```
 
-    or (Mac):
+    (Macの場合):
     ```
     sudo npm install -g gulp
     ```
 
-1. Install force-server:
+1. force-serverをインストールします:
     ```
     npm install -g force-server
     ```
 
-    or (Mac):
+    (Macの場合):
     ```
     sudo npm install -g force-server
     ```
 
-1. Build the JavaScript app using the Ionic build script:
+1. Ionicのビルドスクリプトを使ってJavascriptをビルドします:
     ```
     gulp build
     ```
 
-1. Run the app in the browser:
+1. アプリをブラウザで動作させます:
     ```
     force-server --root www
     ```
-    
-    - If you don't see the OAuth window, enable popups and try again.
-    - Make sure you log in the org you installed the DreamHouse package in.
-        
-        
-## Build and Run on Device
 
-1. Restore the state of the application using the `cordovaPlugins` and `cordovaPlatforms` entries in package.json:
+    - もしOAuthのウィンドウが見えない場合、ポップアップを有効にして再実行します。
+    - Dreamhouseパッケージをインストールした組織にログインできることを確認します。
+
+
+## ビルド及びデバイス上で動作
+
+1. package.json `cordovaPlugins` 及び `cordovaPlatforms` を利用して内にあるアプリケーションの状態をリストアします:
     ```
     ionic state restore
     ```
 
-1. Install the Mobile SDK plugin:
+1. Mobile SDK プラグインをインストールします:
     ```
     cordova plugin add https://github.com/forcedotcom/SalesforceMobileSDK-CordovaPlugin
     ```
 
-1. Build the app for iOS:
+1. iOS向けのアプリケーションをビルドします:
     ```
     ionic build ios
     ```
 
-1. Open ```DreamHouse.xcodeproj``` in the ```dreamhouse-mobile-app/platforms/ios``` directory  
+1.  ```dreamhouse-mobile-app/platforms/ios``` ディレクトリにある ```DreamHouse.xcodeproj``` を開きます。
 
-1. In Xcode, run the application, or select **Product** > **Archive** in the menu for App Store or Enterprise deployment. If the build fails in Xcode, select the **DreamHouse** target, click the **Build Settings** tab, search for **bitcode**, select **No** for **Enable Bitcode**, and try again.
+1. Xcode上でアプリケーションをビルドするか、メニュー上の **Product** > **Archive** からApp Store もしくは Enterprise 配布ようにビルドします。もしXcode上でビルドがエラーになる場合は、 **DreamHouse** ターゲットから **Build Settings** タブを開き、 **bitcode** を検索して **Enable Bitcode** に **No** を選択し、再度実行します。
