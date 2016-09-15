@@ -37,11 +37,10 @@
   "cordovaPlatforms": [
     {
       "platform": "ios",
-      "version": "3.9.2",
-      "locator": "ios@3.9.2"
+      "version": "4.2.0",
+      "locator": "ios@4.2.0"
     }
   ],
   "name": "mobile-new",
   "description": "DreamHouse Customer Engagement App"
 }
-
